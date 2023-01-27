@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head><center>
+<body style="background-color:black;color:aqua">
+<form  method="post">
+    {% csrf_token %}
+    <h5 style="color:red"><u><i>Update the details here</i></u></h5>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" name="uname" value="{{ data.Stud_Name }}"></td>
+    </tr>
+     <tr>
+        <td>Age:</td>
+        <td><input type="number" name="age" value="{{ data.Stud_Age }}"></td>
+    </tr>
+     <tr>
+        <td>Phno:</td>
+        <td><input type="number" name="phno" value="{{ data.Stud_Phno }}"></td>
+    </tr>
+     <tr>
+        <td>City:</td>
+        <td><select name="city">
+            <option selected>{{ data.Stud_City }}</option>
+        {% for i in City_Data %}
+            <option>{{i.City_Name}}</option>
+            {% endfor %}
+        </select>
+        </td>
+    </tr>
+      <tr>
+        <td>Course:</td>
+        <td><select name="course">
+            <option selected>{{ data.Stud_Course }}</option>
+        {% for i in Course_Data %}
+            <option>{{i.Course_Name }}</option>
+            {% endfor %}
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="submit" name="btnsubmit" value="UPDATE"> </td>
+    </tr>
+
+</table>
+
+</body></center>
+</html>

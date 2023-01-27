@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+</head>
+<body style="background-color:pink">
+<form action="regdata" method="post">
+    {% csrf_token %}
+ <center>   <h3 style="color:red">{{data}}</h3>
+     <h5>REGISTRATION</h5>
+    <table align="center"></table>
+  <tr>
+      <td>User:</td>
+      <td><input type="text" name="txt_user"><br></td>
+  </tr>
+     <tr>
+       <td>email:</td>
+       <td><input type="email" name="email"><br></td>
+     </tr>
+     <tr>
+        <td>Password:</td>
+    <td><input type="password" name="pass"><br></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="SUBMIT" name="btnsubmit"></td>
+    </tr>
+     </table></center>
+</form>
+</body>
+</html>
